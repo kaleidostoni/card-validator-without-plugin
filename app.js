@@ -51,7 +51,7 @@ const validateCardNumber = input => {
     let even = 0;
     let odd = 0;
     let evenSum = 0;
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < backwardsNumber.length; i++) {
         if (i % 2 !== 1) {
             odd += parseInt(backwardsNumber[i]);
             // console.log(backwardsNumber[i]);
@@ -59,7 +59,7 @@ const validateCardNumber = input => {
     }
     //console.log(odd);
 
-    for (var j = 1; j < 16; j++) {
+    for (var j = 1; j < backwardsNumber.length; j++) {
 
         if (i % 2 === 0 && backwardsNumber[j] <= 4) {
             even += parseInt(backwardsNumber[j] * 2);
