@@ -105,11 +105,16 @@ const validateCardDetails = element => {
     validateName(name);
     validateExpireDate(expireDate);
     validateCardNumber(cardNumber);
+    if (validateCardCVV(cvv) === true && validateName(name) === true && validateExpireDate(expireDate) === true && validateCardNumber(cardNumber) === true){
+        return true;
+    }else{
+        return false;
+    }
 };
 
 form.addEventListener("submit", e => {
     e.preventDefault();
-    if (validateCardDetails(form)) {
+    if (validateCardDetails(form) === true) {
         console.log("datos válido... enviar...");
     } else {
         console.log("datos inválidos");
